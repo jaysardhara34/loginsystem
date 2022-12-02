@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "703638197939",
+    "project_id": "loginsys-f8f93",
+    "storage_bucket": "loginsys-f8f93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703638197939:android:8a36f0c809df90addac2c6",
+        "android_client_info": {
+          "package_name": "com.jaysardhara.loginsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703638197939-i14fgir4f0ppa0tikl5gti8pit4ge1uc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jaysardhara.loginsystem",
+            "certificate_hash": "8fc2e53775df50d0fbda5756b47049c3285393af"
+          }
+        },
+        {
+          "client_id": "703638197939-kb06oj1vkf8r1mggtvese9ia7bbi26aj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZfzcahTZhSnUiq9d1EirnrfS2-k3Gdm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703638197939-kb06oj1vkf8r1mggtvese9ia7bbi26aj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
