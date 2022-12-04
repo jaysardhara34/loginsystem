@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:loginsystem/screens/view/homeScreen.dart';
 import 'package:loginsystem/screens/view/login/loginScreen.dart';
 import 'package:loginsystem/utils/fireBaseHelper.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -26,8 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
         child: Scaffold(
           body:Center(
-            child: FlutterLogo(
-              size: 150,
+            child:  Container(
+              height: 450,
+              width: 450,
+
+              child: Lottie.asset('assets/login.json'),
             ),
           ),
         ));

@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    profile();
   }
 
   void profile() async {
@@ -28,40 +29,75 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: 5),
-              child: IconButton(
-                  onPressed: () {
-                    logout();
-                    Get.offAll(LoginScreen());
-                  },
-                  icon: Icon(Icons.logout)),
-            )
-          ],
           primary: false,
           toolbarHeight: 65,
-          backgroundColor: Colors.transparent,
           flexibleSpace: Container(
-            margin: EdgeInsets.all(6),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blue.shade900),
+            child: Image.asset(
+              scale: 1,
+              'assets/ap.jpg',
+              fit: BoxFit.fitHeight,
+              height: double.infinity,
+              width: double.infinity,
+            ),
           ),
           elevation: 00,
           centerTitle: true,
-          title: Text('HomeScreen'),
+          title: Text('Homepage'),
         ),
-        body: Center(
-          child: Obx(
-            () => Column(
-              children: [
-                Text('${_controller.userDataList}'),
-              ],
+        drawer: Drawer(
+          child: Container(height: double.infinity,width: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/hbg.jpg'),fit: BoxFit.cover)),
+            child: Obx(
+              () => Column(
+                children: [
+                  SizedBox(
+                    height: 50,
+                  ),
+                  CircleAvatar(backgroundColor: Colors.transparent,
+                      radius: MediaQuery.of(context).size.width * 0.13,
+                      backgroundImage:
+                          NetworkImage('${_controller.userDataList[2]}')),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    '${_controller.userDataList[1]}',
+                    style: TextStyle(color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.width * 0.045,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    '${_controller.userDataList[0]}',
+                    style: TextStyle(color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.width * 0.045,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
+        ),
+        body: Stack(
+          children: [
+            Image.asset(
+              scale: 1,
+              'assets/hbg.jpg',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+            ),
+            Column(
+              children: [],
+            )
+          ],
         ),
       ),
     );
   }
+
+  void showDrawer() {}
 }
