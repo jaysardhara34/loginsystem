@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loginsystem/screens/controller/homeController.dart';
 import 'package:loginsystem/screens/view/homeScreen.dart';
 import 'package:loginsystem/screens/view/login/createUser.dart';
 import 'package:loginsystem/utils/fireBaseHelper.dart';
@@ -12,8 +13,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  HomeController _controller = Get.put(HomeController());
   TextEditingController _txtemail = TextEditingController();
   TextEditingController _txtpassword = TextEditingController();
+  TextEditingController _txtname = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -109,8 +112,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        String msg =
-                            await Loginep(_txtemail.text, _txtpassword.text);
+                        String msg = await Loginep(
+                            _txtemail.text, _txtpassword.text, _txtname.text);
                         Get.snackbar('User', '$msg',
                             duration: Duration(seconds: 1));
                         if (msg == "Success") {
@@ -138,9 +141,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ))),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Divider(thickness: 0.9, color: Colors.white54),
+                    SizedBox(
+                      height: 10,
+                    ),
                     IconButton(
                         iconSize: MediaQuery.of(context).size.height * 0.045,
                         onPressed: () async {
@@ -156,6 +162,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           backgroundColor: Colors.transparent,
                           backgroundImage: AssetImage('assets/gl.webp'),
                         )),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

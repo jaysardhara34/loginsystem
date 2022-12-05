@@ -13,6 +13,7 @@ class CreateUserScreen extends StatefulWidget {
 class _CreateUserScreenState extends State<CreateUserScreen> {
   TextEditingController _txtemail = TextEditingController();
   TextEditingController _txtpassword = TextEditingController();
+  TextEditingController _txtname = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                         style: TextStyle(color: Colors.white70),
                         controller: _txtemail,
                         decoration: InputDecoration(
+                          fillColor: Colors.lightBlueAccent,
                           enabledBorder: OutlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.lightBlueAccent)),
@@ -67,11 +69,11 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                           ),
                           border: OutlineInputBorder(),
                           label: Text(
-                            "E-mail",
+                            "E-Mail",
                             style: TextStyle(color: Colors.white60),
                           ),
                           suffixIcon: Icon(
-                            Icons.email_outlined,
+                            Icons.mail_outline,
                             color: Colors.white60,
                           ),
                         ),
@@ -110,8 +112,8 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        String msg =
-                            await Createac(_txtemail.text, _txtpassword.text);
+                        String msg = await Createac(_txtemail.text,
+                            _txtpassword.text, _txtname.text);
                         Get.snackbar('User', '${msg}',
                             duration: Duration(seconds: 1));
                         if (msg == "Success") {
