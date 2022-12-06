@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jaysardhara.loginsystem">
    <application
-        android:label="Firebase Login"
+        android:label="FireStore App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

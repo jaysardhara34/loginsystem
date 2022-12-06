@@ -143,12 +143,41 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    Divider(thickness: 0.9, color: Colors.white54),
+                    // Divider(thickness: 0.9, color: Colors.white54),
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.002,
+                          color: Colors.white54,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Or Signing with',
+                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: MediaQuery.of(context).size.height * 0.002,
+                          color: Colors.white54,
+                        ),
+                      ],
+                    ),
                     SizedBox(
                       height: 10,
                     ),
                     IconButton(
-                        iconSize: MediaQuery.of(context).size.height * 0.045,
+                        iconSize:
+                            MediaQuery.of(context).size.height * 0.045,
                         onPressed: () async {
                           bool msg = await googlelogin();
 
