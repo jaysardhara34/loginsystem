@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     profile();
     initnotification();
-    fireNotification();
+    // fireNotification();
   }
 
   void profile() async {
@@ -156,8 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               playSound: true,
                             );
 
-                            NotificationDetails nd =
-                            NotificationDetails(android: androidn);
+                            NotificationDetails nd = NotificationDetails(android: androidn);
 
                             await flnp!.show(1, "Tada", "Yoaimo Banana", nd);
                           },
@@ -552,6 +551,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     tz.initializeTimeZones();
 
-    await flnp!.initialize(flutterSetting);
+     flnp!.initialize(flutterSetting);
   }
 }
